@@ -27,6 +27,7 @@ const AppContextProvider = ({children}) => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   useEffect(() => {
@@ -54,3 +55,5 @@ const AppContextProvider = ({children}) => {
 }
 
 export const useAppContext = () => useContext(AppContext);
+
+export default AppContextProvider;
